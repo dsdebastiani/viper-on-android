@@ -2,6 +2,7 @@ package com.example.dsdebastiani.viper.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleObserver
 import com.example.dsdebastiani.viper.R
 import com.example.dsdebastiani.viper.data.User
 import com.google.android.material.snackbar.Snackbar
@@ -13,6 +14,7 @@ class HomeActivity : AppCompatActivity(), HomeContracts.View {
     var presenter: HomeContracts.Presenter? = HomePresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        lifecycle.addObserver(presenter as LifecycleObserver)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
     }

@@ -1,6 +1,8 @@
 package com.example.dsdebastiani.viper.login
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.OnLifecycleEvent
 import com.example.dsdebastiani.viper.data.User
 
 class LoginPresenter(var view: LoginContracts.View?) : LoginContracts.Presenter, LoginContracts.InteractorOutput {
@@ -8,6 +10,7 @@ class LoginPresenter(var view: LoginContracts.View?) : LoginContracts.Presenter,
     var interactor: LoginContracts.Interactor? = LoginInteractor(this)
     var router: LoginContracts.Router? = LoginRouter(view as? AppCompatActivity)
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     override fun onDestroy() {
         interactor?.onDestroy()
         router?.onDestroy()

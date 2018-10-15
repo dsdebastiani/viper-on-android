@@ -1,6 +1,7 @@
 package com.example.dsdebastiani.viper.home
 
 import android.content.Intent
+import androidx.lifecycle.LifecycleObserver
 import com.example.dsdebastiani.viper.data.User
 
 object HomeContracts {
@@ -15,7 +16,7 @@ object HomeContracts {
         fun getUser(intent: Intent)
     }
 
-    interface Presenter {
+    interface Presenter : LifecycleObserver {
         fun onDestroy()
         fun onStart(intent: Intent?)
     }

@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.example.dsdebastiani.viper.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login.*
@@ -14,6 +17,7 @@ class LoginActivity : AppCompatActivity(), LoginContracts.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        lifecycle.addObserver(presenter as LifecycleObserver)
         setContentView(R.layout.activity_login)
         loginButton.setOnClickListener {
             onLoginButtonClicked()
@@ -25,12 +29,6 @@ class LoginActivity : AppCompatActivity(), LoginContracts.View {
             usernameEditText.text.toString(),
             passwordEditText.text.toString()
         )
-    }
-
-    override fun onDestroy() {
-        presenter?.onDestroy()
-        presenter = null
-        super.onDestroy()
     }
 
     override fun showError(message: String) {

@@ -2,6 +2,8 @@ package com.example.dsdebastiani.viper.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.OnLifecycleEvent
 import com.example.dsdebastiani.viper.data.User
 
 
@@ -10,12 +12,14 @@ class HomePresenter(var view: HomeContracts.View?) : HomeContracts.Presenter, Ho
     var router: HomeContracts.Router? = HomeRouter(view as? AppCompatActivity)
     var interactor : HomeContracts.Interactor? = HomeInteractor(this)
 
+
     override fun onStart(intent: Intent?){
         intent?.let {
             interactor?.getUser(it)
         }
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     override fun onDestroy() {
         view = null
         router?.onDestroy()

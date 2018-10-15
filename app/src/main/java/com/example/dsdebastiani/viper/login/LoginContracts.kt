@@ -1,5 +1,6 @@
 package com.example.dsdebastiani.viper.login
 
+import androidx.lifecycle.LifecycleObserver
 import com.example.dsdebastiani.viper.data.User
 
 object LoginContracts {
@@ -12,7 +13,7 @@ object LoginContracts {
         fun authUser(user: User)
         fun onDestroy()
     }
-    interface Presenter {
+    interface Presenter : LifecycleObserver {
         fun validateUser(username: String, password: String)
         fun onDestroy()
     }
