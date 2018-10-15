@@ -14,6 +14,7 @@ class HomeRouter(var activity: AppCompatActivity?) : HomeContracts.Router {
         fun getIntentToStart(user: User, origin: AppCompatActivity): Intent? {
             return Intent(origin, HomeActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 putExtra("USER", user)
             }
         }
