@@ -43,7 +43,15 @@ Qaunto mais fraco for o acomplamenteo e mais alta a coesão, melor é a estrutur
 3. Camada de Dmoníio - (Business logic/Domain layer)
 4. Camada de Acesso a Dados - (Data access/Persistence layer)
 
-### Conceito SOLID
+### Princípio SOLID
+
+__SOLID__ é um acrônimo crado por Michael Feathers para cinco princípios da programação orientada a objetos que visã tornar o software mais compreensível, flexível e de fácil manutenção. Esses princípios são um subset dos princípios propostos por Robert C. Martin. (Uncle Bob).
+
+- **S**ingle responsibility principle (SRP) - Princípio de Responsabilidade Única: Uma classe deve ter uma única responsabilidade.
+- **O**pen/closed principle (OCP) - Princípio Aberto/Fechado: O comportamento de uma classe pode ser extendido porém não pode ser modificado.
+- **L**iskov substitution principle (LSP) - Princípio da substituição de Liskov: As classes derivadas devem ser substituíveis por suas classes bases
+- **I**nterface segregation principle (ISP) - Princípio da segregação de interfaces: Muitas interfaces específicas são melhores do que uma interface única geral.
+- **D**ependency inversion principle (DIP) - Princípio da inversão de dependência: Dependa de abstrações e não de implementações.
 
 ### Arquitetura Limpa
 
