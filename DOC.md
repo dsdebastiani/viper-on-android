@@ -20,25 +20,43 @@ No RUP, a arquitetura de um sistema de software (em um determinado ponto) é a o
 
 ### Visões de Arquitetura de Sofware
 
-Existem vários padrões e estilos de arquitetura de software. Alguns deles:
+Existem vários padrões e estilos de arquitetura de software. Os mais conhecidos são:
 
-1. Client-server
-2. Data-centric
-3. Event-driven
-4. Layered
-5. Microservices architecture
-7. Monolithic application
-8. Representational state transfer (REST)
-9. Service-oriented (SOA)
+1. Cliente Servidor (Client-server)
+2. Centrado em dados (Data-centric)
+3. Guiada a eventos (Event-driven)
+4. Em camadas (Layered)
+5. Microserviços (Microservices)
+6. Monotlítica (Monolithic)
+7. Orientada a serviços (Service-oriented - SOA)
 
-Alguns dos padõres e estilos arquiteturais são semelhantes, ou até o mesmo, outros são especializações de alguns padrões. O que todos eles tem em comum é que eles são um idioma que arquitetos utilizam para prover uma linguagem comum ou vocabulário para descrever classes de sistemas.
+Alguns dos padõres e estilos arquiteturais são semelhantes, ou até, o mesmo. Outros, são apenas especializações de um padrão. Mas o que todos eles tem em comum é que eles são um idioma que arquitetos utilizam para prover uma linguagem comum ou vocabulário para descrever classes de sistemas.
+
+### Padrão de Arquitetura de Software em Camadas - Layered
+
+Diz-se que uma boa arquitetura de software permite a criação de um projeto com partes independentes, ou com pelo menos um baixo acoplamento, resultando assim em softwares de fácil manutenção. Além disso uma boa arquitetura busca oferecer uma alta coesão ao software, conceito ligado ao Princípio de Responsabilidade Única (SRP) do SOLID. A alta coesão existe quando cada componente possui apenas uma responsabilidade e realiza em suas funções somente aquile que realmente deve fazer.
+
+Qaunto mais fraco for o acomplamenteo e mais alta a coesão, melor é a estrutura do software. Uma solução encontrada para diminuir o acomplamento e aumentar a coesão em um software foi dividí-lo em camadas. Normalmente encontramos a seguinte divisão em uma aplicação com interface gráfica para usuário:
+
+1. Camada de Interface de Usuário - (UI layer)
+2. Camada de Aplicação - (Application/Service layer)
+3. Camada de Dmoníio - (Business logic/Domain layer)
+4. Camada de Acesso a Dados - (Data access/Persistence layer)
+
+### Conceito SOLID
+
+### Arquitetura Limpa
 
 ## Arquitetura de Software no Android
-
-## Conceito SOLID
-
-## Arquitetura Limpa
 
 ## VIPER
 
 ## VIPER no Android
+
+## Referências
+
+- [Software architecture](https://en.wikipedia.org/wiki/Software_architecture)
+- [Visão geral da arquitetura](https://msdn.microsoft.com/pt-br/hh144976.aspx)
+- [Conceitos:  Arquitetura de Software](http://www.funpar.ufpr.br:8080/rup/process/workflow/ana_desi/co_swarch.htm)
+- [10 Common Software Architectural Patterns in a nutshell](https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013)
+- [A Arquitetura Limpa (Clean Architecture)](https://medium.com/@mycaellmoura/a-arquitetura-limpa-clean-architecture-7902846bffa8)
